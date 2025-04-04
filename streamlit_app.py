@@ -53,12 +53,16 @@ x_coord=np.random.rand(n_matches)*100
 y_coord=np.random.rand(n_matches)*100
 goal_values = np.random.randint(0, 15, size=(n_matches))
 
+goal_colors = np.random.rand(n_matches, 3) #RGB colors
+goal_colors_lot = [tuple(c) for c in goal_colors]
+
 goal_data={"X": x_coord,
            "Y":y_coord,
-           "Goals": goal_values
+           "Goals": goal_values,
+           "Colors": goal_colors_lot
 }
 
 df3=pd.DataFrame(goal_data)
 st.dataframe(df3)
 
-st.scatter_chart(goal_data, x="X", y="Y", size="Goals")
+st.scatter_chart(goal_data, x="X", y="Y", size="Goals", color="Colors")
