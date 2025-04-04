@@ -66,3 +66,15 @@ df3=pd.DataFrame(goal_data)
 st.dataframe(df3)
 
 st.scatter_chart(goal_data, x="X", y="Y", size="Goals", color="Colors")
+
+#map
+n_pos=100
+latitude=np.random.uniform(45.8, 45.9, n_pos) #latitude of Lecco
+longitude=np.random.uniform(9.35, 9.45, n_pos) #longitude of Lecco
+locations={
+    "lat": latitude,
+    "lon": longitude
+}
+
+df4=pd.DataFrame(locations)
+st.map(df4, size=3)
